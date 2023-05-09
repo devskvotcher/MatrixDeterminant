@@ -8,7 +8,7 @@ public partial class Form1 : Form
 {
     private DataGridView dataGridView;
     private Button btnCalculate, btnExit, btnCreate;
-    private NumericUpDown numUpDownRows, numUpDownColumns;
+    private NumericUpDown numUpDownRows;
     private Label lblResult;
     private int matrixRows, matrixColumns;
     private Button btnLoadFromFile;
@@ -98,7 +98,6 @@ public partial class Form1 : Form
         this.Controls.Add(this.btnExit);
         this.Controls.Add(this.btnCreate);
         this.Controls.Add(this.numUpDownRows);
-        this.Controls.Add(this.numUpDownColumns);
         this.Controls.Add(this.lblResult);
         this.Controls.Add(this.btnLoadFromFile);
         this.Controls.Add(this.btnDBDialog);
@@ -224,7 +223,7 @@ public partial class Form1 : Form
 
             for (int i = 0; i < matrixRows; i++)
             {
-                string[] cells = lines[i].Split(' ');
+                string[] cells = lines[i].Split(';');
                 for (int j = 0; j < matrixColumns; j++)
                 {
                     dataGridView.Rows[i].Cells[j].Value = cells[j];
