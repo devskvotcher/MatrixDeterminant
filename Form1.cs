@@ -233,8 +233,10 @@ public partial class Form1 : Form
     }
     private void btnDBDialog_Click(object sender, EventArgs e)
     {
-        DBForm dbForm = new DBForm();
-        dbForm.ShowDialog();
+        using (DBForm dbForm = new DBForm(dataGridView))
+        {
+            dbForm.ShowDialog(this);
+        }
     }
     
 }
